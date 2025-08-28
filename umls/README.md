@@ -1,0 +1,1 @@
+Created by loading the schema.sql file into my local copy of postgres (sudo -u postgres psql postgresql://localhost:5432/postgres < /mnt/c/Users/schweitzer/Downloads/schema.sql) and creating the diagram from the database using dbeaver community edition.
