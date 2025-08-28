@@ -2,6 +2,12 @@
 
 If you want to use this testbed, you can set up your own by creating an app in our Dash Enterprise development server (dash-temp)
 
+To clone the repo into your newly created app space on Dash Enterprise you can run:
+
+```
+git clone https://github.com/NOAA-PMEL/orm-testbed.git .
+```
+
 Once the app is created you need to go to the service tab and turn on Postgres
 You will also need to turn on the persistent storage, and put a copy of the [ROR CSV database](https://zenodo.org/records/16950727) ../mount/ror/
 
