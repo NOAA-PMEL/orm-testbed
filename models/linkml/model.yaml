@@ -1,0 +1,362 @@
+# gen-json-schema dash_linkml.yaml > dash_json_schema.json
+# linkml-validate -s dash_linkml.yaml
+# gen-sqla dash_linkml.yaml > dash_sql_alchemy.py
+
+# Address,
+# ContactInformation,
+# MetadataRole,
+# OadsMetadata,
+# Organization, - in sQLAlchemy Dash cardinaly is one-to-many (one person can be associated iwth many Organizations, but an Organization can be associated with one person - change this to be many-to-many)
+# Person,
+
+id: https://example.org/noaa-pmel-submission # placeholder. consider registering schema url with w33id.org: https://w3id.org/#new so its linkable for public schemas, or else use a noaa domain
+name: NOAA-PMEL-Submit # machine readable
+title: NOAA PMEL Submission Dashboard Schema # human readable
+notes: This is just a sammple of Linus's UML converted into LinkML compliant YAML
+description: >-
+  The NOAA PMEL Submission Dashboard Schema outlines the standardized metadata framework for NOAA PMEL submission.
+license: # add license here (e.g. https://creativecommons.org/publicdomain/zero/1.0/)
+version: 0.0.0
+
+imports: #allows for modular development. A list of schemas that are to be included in this schema. 
+  - linkml:types # allows to specify types like str, int, float, etc. Can also import other parts of your schema. or linkmlL mappings, linkml:units to access standardized  UCUM codes for units and mapping elements to other schemas
+
+
+prefixes: # a collection of prefix expansions that specify how CURIEs can be expanded to URIs (used to shorten URIs in fields like)
+  linkml: "https://w3id.org/linkml/"
+  noaa-pmel: "https://noaa/pmel/"
+
+default_prefix: noaa-pmel # prefix that is used for all elements within a schema if not defined. Elements without a prefix will automatically get noaa-pmel. E.g. Person class will be noaa-pmel:Person
+default_range: string # Any range not specified will get a defualt of str
+
+
+classes:
+  
+  OadsMetadata: # class_uri will automatically noaa-pmel:OadsMetadata
+    description: >-
+      This is the Dataset class, and the root of all the metadata.
+    slots:
+      - id
+      - title
+      - submission_date
+      - abstract
+      - use_limitation
+      - purpose
+      - data_license
+      - investigators
+      - data_submitters
+      - related_datasets
+    slot_usage:
+      investigators:
+        multivalued: true # many-to-many relationship with Person table
+      data_submitters:
+        multivalued: true # many-to-many relationship with the table
+      related_datasets:
+        multivalued: true
+        inlined_as_list: true # one-to-many realtionship with RelatedDataset
+
+  Submission:
+    description: A submission.
+    slots:
+      - id
+      - submitted_to_ncei
+      - date_submitted_to_ncei
+      - created
+      - modified # Figure out if can make data automatically today
+      - oads_metadata # one-to-many
+      - files
+    slot_usage:
+      oads_metadata:
+        multivalued: true
+        inlined_as_list: true
+      files:
+        multivalued: true
+        inlined_as_list: true
+
+  DashboardUser:
+    description: The dashboard user.
+    slots:
+      - id
+      - active
+      - email
+      - submissions
+      - people
+    slot_usage:
+      submissions:
+        multivalued: true
+        inlined_as_list: true
+      people:
+        multivalued: true # one-to-many
+        inlined_as_list: true
+
+  Person:
+    description: >-
+      A person is a human.
+    slots:
+      - id
+      - title
+      - first_name
+      - last_name
+      - contact_information
+      - metadata_role
+      - organizations
+      - data_submitter_person
+    slot_usage:
+      first_name:
+        required: true
+      last_name:
+        required: true
+      contact_information:
+        multivalued: true
+        inlined_as_list: true # One-to-Many: Person has many ContactInformation
+      metadata_role:
+        multivalued: true # no inlined_as_list = Many-to-Many: Person has many metadata roles
+      organizations:
+        multivalued: true
+        inlined_as_list: true # One-to-many
+      data_submitter_person: #many-to-many
+        multivalued: true
+      # dashboard_user: #many-to-many
+      #   multivalued: true
+      
+
+  RelatedDataset:
+    description: The dataset that is related to the entity.
+    slots:
+      - id
+      - dataset
+      - link
+
+  ContactInformation:
+    description: The contact of information of a thing that is contactable.
+    slots:
+      - id
+      - phone
+      - email
+      - link
+      - address
+    slot_usage:
+      address:
+        multivalued: true
+        inlined_as_list: true
+
+  Address:
+    description: The Address information of an entity.
+    slots:
+      - id
+      - delivery_points
+      - city
+      - administrative_area
+      - postal_code
+      - country
+    slot_usage:
+      delivery_points:
+        multivalued: true
+
+  MetadataRole:
+    description: The metadata role.
+    slots:
+      - id
+      - name
+
+  Organization:
+    description: The organization.
+    slots:
+      - id
+      - name
+      - organization_identifier
+      - organization_identifier_type
+
+  File:
+    description: A file.
+    slots:
+      - id
+      - filename
+      - category
+      - mime
+      - created
+      - modified
+
+slots:
+  
+  id: 
+    identifier: true
+    description: A unique identifier for a thing
+    range: integer
+
+  name:
+    description: The name of a thing.
+  
+  title:
+    description: The title of the thing. E.g. the dataset submission title
+    range: string
+
+  submission_date:
+    description: The date something was submitted.
+    range: datetime
+
+  abstract:
+    description: The abstract of the thing. # don't have to specify range: string because default_range is str
+
+  use_limitation:
+    description: Use limitation.
+
+  purpose:
+    description: Purpose
+
+  data_license:
+    description: Data License
+
+  first_name:
+    description: The first name of a person
+
+  last_name:
+    description: The last name of a person
+
+  metadata_role:
+    description: The metadata roles a person can have
+    notes: is a many-to-many relationship in the Person table referencing the MetadataRole table.
+    range: MetadataRole
+
+  phone:
+    description: phone number
+
+  email: 
+    description: email address
+
+  link: 
+    description: link url.
+
+  contact_information:
+    description: The contact information of a person
+    range: ContactInformation
+
+  address:
+    description: The address of an entity
+    range: Address
+
+  delivery_points:
+    description: The delivery points
+      
+  city:
+    description: The city.
+  
+  administrative_area:
+    description: State, Provence or AA
+  
+  postal_code:
+    description: The zip or postal code
+
+  country:
+    description: The country
+
+  organization_identifier:
+    description: The identifier for an organzation
+    examples:
+      - value: https://ror.org/00cvxb145
+        description: ROR identifier
+
+  organization_identifier_type:
+    description: The type of organization_identifier
+    range: OrganizationIdentifierTypeEnum
+
+  organizations:
+    description: The organizations the person is associated with.
+    notes: A many-to-many relationship in the people tble referencing the Organization table
+    range: Organization
+
+  investigators:
+    description: The investigators associated with an OadsMetadata
+    notes: A many-to-many relationship in the OadsMetadata with the Person table.
+    range: Person
+
+  data_submitters:
+    description: The people associated with submitting the OadsMetadata
+    notes: A many-to-many relationship in the OadsMetadata with the Person table.
+    range: Person
+
+  submitted_to_ncei:
+    description: if the data has been submitted to NCEI.
+    range: boolean
+
+  date_submitted_to_ncei:
+    description: The data the data was submitted to ncei
+    range: datetime
+  
+  created:
+    description: The date something (like a submission or a file) was created
+    range: datetime
+
+  modified:
+    description: The date the something (like a submission or a file) was modified.
+    range: datetime # could not figure out how to tell it to set a defualt as now.
+  
+  oads_metadata:
+    description: The oadsmetadata associated with a submission
+    notes: A one-to-many relationship between Submission and OadsMetadata
+    range: OadsMetadata
+
+  active:
+    description: If a dashboard user is active or not.
+    range: boolean
+
+  submissions:
+    description: The submissions associated with a DashboardUser
+    notes: A one-to-many relationship between DashboardUser and Submission
+    range: Submission
+
+  filename:
+    description: The name of a file.
+    range: string
+
+  category:
+    description: The category of a file
+    range: string
+
+  files:
+    description: The files associated with a submission
+    notes: a one-to-many relationship between a Submission and a File
+    range: File
+
+  mime:
+    description: TMIME types is a standard naming convention for file types, eg application/pdf or text/plain
+    range: string
+
+  people:
+    description: The people associated with something (e.g. a DashboardUser)
+    notes: used for a many-to-many relationship between DashboardUser and Person
+    range: Person
+
+  dataset:
+    description: The dataset.
+    range: string
+
+  related_datasets:
+    description: The datasetes related to an entity
+    notes: Used for the one-to-many relationship for OadsMetadata and RelatedDataset
+    range: RelatedDataset
+
+  data_submitter_person: #many-to-many
+    description: The data submitter person
+    notes: Used for the many-to-many relationship for OadsMetadata and Person
+    range: OadsMetadata
+    
+  dashboard_user: #many-to-many
+    description: The dashboard user
+    notes: Used for the many-to-many relationship for Dashboard and Person
+    range: DashboardUser
+      
+
+
+enums:
+
+  OrganizationIdentifierTypeEnum:
+    permissible_values:
+      ror:
+        description: An ROR id
+      gcmd:
+        description: a GCMD id
+      
+      
+
+

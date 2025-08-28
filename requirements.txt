@@ -1,0 +1,4 @@
+pydantic
+SQLAlchemy==2.0.41
+linkml
+wtforms_alchemy
