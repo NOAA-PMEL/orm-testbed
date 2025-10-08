@@ -1,0 +1,134 @@
+{
+    "id": "a4a42acc-9e98-45de-b96b-bbf08f916b32",
+    "submit_time": "2025-10-08T21:35:44.403837",
+    "responsible_party_id": "60162d6f-a01f-4931-a681-cb3e25d8ce5a",
+    "data_submitter_id": "79495a34-1837-4537-b757-c2905344ba3c",
+    "researchers": [
+        {
+            "id": "0101d106-ecd5-490f-b127-f838e73648e0"
+        },
+        {
+            "id": "379a6dbd-ca2d-429b-8756-9a0864f480c4"
+        },
+        {
+            "id": "735d3316-c8ab-4729-8809-65999f90280f"
+        }
+    ],
+    "variables": [
+        {
+            "id": "3069511f-181e-4fff-b79a-b362f94ce686",
+            "variable_type": "base",
+            "name": "Sea Surface Temperature",
+            "standard_name": "sea_surface_temperature",
+            "description": "The temperature of the sea water at the surface.",
+            "dataset_variable_name": "SST",
+            "units": "Celsius"
+        },
+        {
+            "id": "dc402e84-0a95-47f7-9b3c-687612d6f83a",
+            "variable_type": "ta_variable",
+            "name": "Total Alkalinity",
+            "standard_name": "sea_water_total_alkalinity",
+            "description": "The total alkalinity of a seawater sample.",
+            "dataset_variable_name": "TA",
+            "units": "micromol/kg",
+            "cellType": "Open Cell",
+            "curveFitting": "Non-linear least squares",
+            "blankCorrection": "Applied"
+        },
+        {
+            "id": "453ce30b-8cab-47f3-89c8-48f16478b312",
+            "variable_type": "ph_variable",
+            "name": "pH",
+            "standard_name": "sea_water_ph_reported_on_total_scale",
+            "description": "The pH of a seawater sample.",
+            "dataset_variable_name": "pH_total",
+            "units": "Total scale",
+            "phScale": "Total",
+            "measurement_temperature": "25 C",
+            "temperature_correction_method": "Dickson Lab Manual",
+            "ph_report_temperature": "25 C"
+        },
+        {
+            "id": "c850397b-1536-4b7a-a821-dc5dd5fbe8f9",
+            "variable_type": "co2_variable",
+            "name": "pCO2",
+            "standard_name": "surface_partial_pressure_of_carbon_dioxide_in_air",
+            "description": "Partial pressure of CO2 in air.",
+            "dataset_variable_name": "pCO2_air",
+            "units": "µatm",
+            "gasDetector": "LI-COR 7000",
+            "waterVaporCorrection": "Yes, applied",
+            "temperatureCorrectionMethod": "Gordon and Jones 1973",
+            "co2ReportTemperature": "20 C"
+        },
+        {
+            "id": "eb6916e4-e837-4a5b-b9e8-10ba80294f44",
+            "variable_type": "co2_autonomous",
+            "name": "Autonomous pCO2",
+            "standard_name": "surface_partial_pressure_of_carbon_dioxide_in_sea_water",
+            "description": "Autonomous measurement of pCO2 in seawater.",
+            "dataset_variable_name": "pCO2_sw",
+            "units": "µatm",
+            "gasDetector": "Pro-Oceanus Mini-pCO2",
+            "waterVaporCorrection": "Yes",
+            "temperatureCorrectionMethod": "Takahashi et al. 1993",
+            "co2ReportTemperature": "In-situ",
+            "locationSeawaterIntake": "Bow of ship",
+            "depthSeawaterIntake": "5 meters",
+            "equilibrator": "Showerhead type"
+        },
+        {
+            "id": "86263cae-55c7-4f92-99f6-190c230b0743",
+            "variable_type": "co2_discrete",
+            "name": "Discrete pCO2",
+            "standard_name": "partial_pressure_of_carbon_dioxide_in_sea_water",
+            "description": "Discrete measurement of pCO2 in seawater from bottle sample.",
+            "dataset_variable_name": "pCO2_bottle",
+            "units": "µatm",
+            "gasDetector": "GC-FID",
+            "waterVaporCorrection": "Applied post-measurement",
+            "temperatureCorrectionMethod": "None",
+            "co2ReportTemperature": "20 C",
+            "storageMethod": "Mercuric chloride",
+            "seawaterVolume": "500 mL",
+            "headspaceVolume": "10 mL",
+            "measurementTemperature": "20 C"
+        }
+    ],
+    "people": [
+        {
+            "id": "0667d84c-8338-4a4f-b0e4-6690d85dab13",
+            "first_name": "Jane",
+            "last_name": "Brown",
+            "address": "12 E. Hall of Fame St., Stillwater, OK, 74075",
+            "organization_id": "090b1f31-2b13-4299-9780-653a94bb213a"
+        },
+        {
+            "id": "8827afd4-cd66-4365-94a3-e049da6bef31",
+            "first_name": "Joe",
+            "last_name": "Morrow",
+            "address": "15 E. Lewis St., Stillwater, OK, 74075",
+            "organization_id": "090b1f31-2b13-4299-9780-653a94bb213a"
+        },
+        {
+            "id": "f8331d9d-e423-4d70-a72b-ddc9d1239d99",
+            "first_name": "Julie",
+            "last_name": "Jefferies",
+            "address": "75 E. Monroe St., Stillwater, OK, 74075",
+            "organization_id": "090b1f31-2b13-4299-9780-653a94bb213a"
+        }
+    ],
+    "organizations": [
+        {
+            "id": "26cff303-4b37-462a-b2b0-de544f77ce01",
+            "name": "Oklahoma State University",
+            "description": "Educational Institution"
+        },
+        {
+            "id": "aceaf247-abaf-4876-bd04-2aed4eb36da2",
+            "name": "University of Oklahoma",
+            "description": "Educational Institution"
+        }
+    ]
+}
