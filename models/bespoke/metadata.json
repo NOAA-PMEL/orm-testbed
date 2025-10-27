@@ -1,0 +1,160 @@
+{
+    "id": "49a4bd15-1dd9-4ac5-85df-824d08526e82",
+    "submit_time": "2025-10-23T18:42:12.448538",
+    "responsible_party_id": "c836f74d-a3d0-4e17-9c12-1b80d00e0269",
+    "data_submitter_id": "f400fa50-23b6-4156-87ab-16ffcd460683",
+    "researchers": [
+        {
+            "id": "4811316b-d7dd-4b68-a35a-cce9ff35ae4c",
+            "description": "Researcher",
+            "role": "researcher",
+            "object_id": "ff8d0937-1ab4-416b-8f6f-478807853c4d"
+        },
+        {
+            "id": "bd0ccd14-2bb5-4cd5-b6a8-70e6427978c0",
+            "description": "Principal Investigator",
+            "role": "pi",
+            "object_id": "5e19cfb3-6966-429c-88cf-64ecc0648355"
+        },
+        {
+            "id": "dbec60ee-4625-4ce3-a8ec-46d512f2ae5a",
+            "description": "Researcher",
+            "role": "researcher",
+            "object_id": "5e19cfb3-6966-429c-88cf-64ecc0648355"
+        }
+    ],
+    "variables": [
+        {
+            "id": "7841735b-64ba-4f02-801a-c6a40ecf0c7e",
+            "variable_type": "base",
+            "name": "Sea Surface Temperature",
+            "standard_name": "sea_surface_temperature",
+            "description": "The temperature of the sea water at the surface.",
+            "dataset_variable_name": "SST",
+            "units": "Celsius"
+        },
+        {
+            "id": "4a288b31-9e66-41b9-9bfe-06d2b80da712",
+            "variable_type": "ta_variable",
+            "name": "Total Alkalinity",
+            "standard_name": "sea_water_total_alkalinity",
+            "description": "The total alkalinity of a seawater sample.",
+            "dataset_variable_name": "TA",
+            "units": "micromol/kg",
+            "cellType": "Open Cell",
+            "curveFitting": "Non-linear least squares",
+            "blankCorrection": "Applied"
+        },
+        {
+            "id": "0e335ceb-cbb4-4f63-9da8-c85df9f978be",
+            "variable_type": "ph_variable",
+            "name": "pH",
+            "standard_name": "sea_water_ph_reported_on_total_scale",
+            "description": "The pH of a seawater sample.",
+            "dataset_variable_name": "pH_total",
+            "units": "Total scale",
+            "phScale": "Total",
+            "measurement_temperature": "25 C",
+            "temperature_correction_method": "Dickson Lab Manual",
+            "ph_report_temperature": "25 C"
+        },
+        {
+            "id": "39ca4986-b0d7-41ad-8d57-598ba0f3c7e9",
+            "variable_type": "co2_variable",
+            "name": "pCO2",
+            "standard_name": "surface_partial_pressure_of_carbon_dioxide_in_air",
+            "description": "Partial pressure of CO2 in air.",
+            "dataset_variable_name": "pCO2_air",
+            "units": "\u00b5atm",
+            "gasDetector": "LI-COR 7000",
+            "waterVaporCorrection": "Yes, applied",
+            "temperatureCorrectionMethod": "Gordon and Jones 1973",
+            "co2ReportTemperature": "20 C"
+        },
+        {
+            "id": "ed70035d-c0f6-446e-9457-32226f2b72ac",
+            "variable_type": "co2_autonomous",
+            "name": "Autonomous pCO2",
+            "standard_name": "surface_partial_pressure_of_carbon_dioxide_in_sea_water",
+            "description": "Autonomous measurement of pCO2 in seawater.",
+            "dataset_variable_name": "pCO2_sw",
+            "units": "\u00b5atm",
+            "gasDetector": "Pro-Oceanus Mini-pCO2",
+            "waterVaporCorrection": "Yes",
+            "temperatureCorrectionMethod": "Takahashi et al. 1993",
+            "co2ReportTemperature": "In-situ",
+            "locationSeawaterIntake": "Bow of ship",
+            "depthSeawaterIntake": "5 meters",
+            "equilibrator": "Showerhead type"
+        },
+        {
+            "id": "fe30e01b-1913-4dfa-83e6-430fa78cc7b9",
+            "variable_type": "co2_discrete",
+            "name": "Discrete pCO2",
+            "standard_name": "partial_pressure_of_carbon_dioxide_in_sea_water",
+            "description": "Discrete measurement of pCO2 in seawater from bottle sample.",
+            "dataset_variable_name": "pCO2_bottle",
+            "units": "\u00b5atm",
+            "gasDetector": "GC-FID",
+            "waterVaporCorrection": "Applied post-measurement",
+            "temperatureCorrectionMethod": "None",
+            "co2ReportTemperature": "20 C",
+            "storageMethod": "Mercuric chloride",
+            "seawaterVolume": "500 mL",
+            "headspaceVolume": "10 mL",
+            "measurementTemperature": "20 C"
+        }
+    ],
+    "people": [
+        {
+            "id": "4db0d9b9-193d-4fc6-b8fd-0fffd0fad9f1",
+            "first_name": "Julie",
+            "last_name": "Jefferies",
+            "address": "75 E. Monroe St., Stillwater, OK, 74075",
+            "PID": "ORCAIDzzzzz",
+            "organization_id": "0a2aa705-4a7c-432c-8676-5ca04adcea80"
+        },
+        {
+            "id": "5e19cfb3-6966-429c-88cf-64ecc0648355",
+            "first_name": "Joe",
+            "last_name": "Morrow",
+            "address": "15 E. Lewis St., Stillwater, OK, 74075",
+            "PID": "ORCAIDxxxxx",
+            "organization_id": "0a2aa705-4a7c-432c-8676-5ca04adcea80"
+        },
+        {
+            "id": "ff8d0937-1ab4-416b-8f6f-478807853c4d",
+            "first_name": "Jane",
+            "last_name": "Brown",
+            "address": "12 E. Hall of Fame St., Stillwater, OK, 74075",
+            "PID": "ORCAIDyyyyy",
+            "organization_id": "0a2aa705-4a7c-432c-8676-5ca04adcea80"
+        }
+    ],
+    "organizations": [
+        {
+            "id": "4462d99b-9098-4da0-9e25-337ac2b4f852",
+            "name": "Oklahoma State University",
+            "description": "Educational Institution",
+            "PID": "https://ror.org/01g9vbr38"
+        },
+        {
+            "id": "c5c7c79d-aaef-4e79-88af-80ef7ba5f688",
+            "name": "University of Oklahoma",
+            "description": "Educational Institution",
+            "PID": "https://ror.org/02aqsxs83"
+        }
+    ],
+    "responsible_party_organization_ref": {
+        "id": "c836f74d-a3d0-4e17-9c12-1b80d00e0269",
+        "description": "whatever",
+        "role": "who knows",
+        "object_id": "c5c7c79d-aaef-4e79-88af-80ef7ba5f688"
+    },
+    "data_submitter_ref": {
+        "id": "f400fa50-23b6-4156-87ab-16ffcd460683",
+        "description": "Data Submitter",
+        "role": "data_submitter",
+        "object_id": "5e19cfb3-6966-429c-88cf-64ecc0648355"
+    }
+}
