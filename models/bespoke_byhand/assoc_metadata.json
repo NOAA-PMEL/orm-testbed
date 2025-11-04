@@ -1,0 +1,299 @@
+{
+    "id": "329580cd-4439-4e12-9657-f2b60cb09650",
+    "submit_time": "2025-11-04T14:23:56.582884",
+    "responsible_party": {
+        "organization_id": "8b604533-ba27-4361-8662-8b70606bf494",
+        "role": "responsible_party",
+        "description": "Responsible Organization"
+    },
+    "data_submitter": {
+        "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+        "person_id": "d1003781-06eb-494c-b398-7155471e8ab4",
+        "role": "data_submitter",
+        "description": "Data Submitter",
+        "person": {
+            "id": "d1003781-06eb-494c-b398-7155471e8ab4",
+            "first_name": "Joe",
+            "last_name": "Morrow",
+            "address": "15 E. Lewis St., Norman, OK, 73019-3072",
+            "PID": "ORCAIDxxxxx",
+            "organizations": [
+                {
+                    "id": "8b604533-ba27-4361-8662-8b70606bf494",
+                    "name": "University of Oklahoma",
+                    "description": "Educational Institution",
+                    "PID": "https://ror.org/02aqsxs83"
+                }
+            ]
+        }
+    },
+    "researchers": [
+        {
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "person_id": "22076fe2-f2b4-4d63-b9f2-ee3eae246398",
+            "role": "researcher",
+            "description": "Researcher",
+            "person": {
+                "id": "22076fe2-f2b4-4d63-b9f2-ee3eae246398",
+                "first_name": "Jane",
+                "last_name": "Brown",
+                "address": "12 E. Hall of Fame St., Stillwater, OK, 74075",
+                "PID": "ORCAIDyyyyy",
+                "organizations": [
+                    {
+                        "id": "0697e206-0618-466f-a608-63c1bd0fb9ef",
+                        "name": "Oklahoma State University",
+                        "description": "Educational Institution",
+                        "PID": "https://ror.org/01g9vbr38"
+                    }
+                ]
+            }
+        },
+        {
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "person_id": "d1003781-06eb-494c-b398-7155471e8ab4",
+            "role": "researcher",
+            "description": "Researcher",
+            "person": {
+                "id": "d1003781-06eb-494c-b398-7155471e8ab4",
+                "first_name": "Joe",
+                "last_name": "Morrow",
+                "address": "15 E. Lewis St., Norman, OK, 73019-3072",
+                "PID": "ORCAIDxxxxx",
+                "organizations": [
+                    {
+                        "id": "8b604533-ba27-4361-8662-8b70606bf494",
+                        "name": "University of Oklahoma",
+                        "description": "Educational Institution",
+                        "PID": "https://ror.org/02aqsxs83"
+                    }
+                ]
+            }
+        }
+    ],
+    "variables": [
+        {
+            "id": "7a6a566c-db0b-4eaa-a13f-01849661739c",
+            "name": "Sea Surface Temperature",
+            "standard_name": "sea_surface_temperature",
+            "description": "The temperature of the sea water at the surface.",
+            "dataset_variable_name": "SST",
+            "units": "Celsius",
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "variable_type": "base"
+        },
+        {
+            "id": "7b82cbb9-9c94-4c3b-8e95-52320cfe2d82",
+            "name": "Total Alkalinity",
+            "standard_name": "sea_water_total_alkalinity",
+            "description": "The total alkalinity of a seawater sample.",
+            "dataset_variable_name": "TA",
+            "units": "micromol/kg",
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "variable_type": "ta_variable",
+            "cellType": "Open Cell",
+            "curveFitting": "Non-linear least squares",
+            "blankCorrection": "Applied"
+        },
+        {
+            "id": "220aec64-5d61-4cf4-9c2c-ee4a2cb9d8fe",
+            "name": "pH",
+            "standard_name": "sea_water_ph_reported_on_total_scale",
+            "description": "The pH of a seawater sample.",
+            "dataset_variable_name": "pH_total",
+            "units": "Total scale",
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "variable_type": "ph_variable",
+            "phScale": "Total",
+            "measurement_temperature": "25 C",
+            "temperature_correction_method": "Dickson Lab Manual",
+            "ph_report_temperature": "25 C"
+        },
+        {
+            "id": "990844e7-2004-49cf-bcd2-4287e80fce81",
+            "name": "pCO2",
+            "standard_name": "surface_partial_pressure_of_carbon_dioxide_in_air",
+            "description": "Partial pressure of CO2 in air.",
+            "dataset_variable_name": "pCO2_air",
+            "units": "µatm",
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "gasDetector": "LI-COR 7000",
+            "waterVaporCorrection": "Yes, applied",
+            "temperatureCorrectionMethod": "Gordon and Jones 1973",
+            "co2ReportTemperature": "20 C",
+            "variable_type": "co2_variable"
+        },
+        {
+            "id": "f4bfa0aa-0e79-40fd-9bb5-4afe6270ae4b",
+            "name": "Autonomous pCO2",
+            "standard_name": "surface_partial_pressure_of_carbon_dioxide_in_sea_water",
+            "description": "Autonomous measurement of pCO2 in seawater.",
+            "dataset_variable_name": "pCO2_sw",
+            "units": "µatm",
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "gasDetector": "Pro-Oceanus Mini-pCO2",
+            "waterVaporCorrection": "Yes",
+            "temperatureCorrectionMethod": "Takahashi et al. 1993",
+            "co2ReportTemperature": "In-situ",
+            "variable_type": "co2_autonomous",
+            "locationSeawaterIntake": "Bow of ship",
+            "depthSeawaterIntake": "5 meters",
+            "equilibrator": "Showerhead type"
+        },
+        {
+            "id": "2a459d5e-c410-4dab-a9e1-9b334580f7b7",
+            "name": "Discrete pCO2",
+            "standard_name": "partial_pressure_of_carbon_dioxide_in_sea_water",
+            "description": "Discrete measurement of pCO2 in seawater from bottle sample.",
+            "dataset_variable_name": "pCO2_bottle",
+            "units": "µatm",
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "gasDetector": "GC-FID",
+            "waterVaporCorrection": "Applied post-measurement",
+            "temperatureCorrectionMethod": "None",
+            "co2ReportTemperature": "20 C",
+            "variable_type": "co2_discrete",
+            "storageMethod": "Mercuric chloride",
+            "seawaterVolume": "500 mL",
+            "headspaceVolume": "10 mL",
+            "measurementTemperature": "20 C"
+        }
+    ],
+    "people": [
+        {
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "person_id": "d1003781-06eb-494c-b398-7155471e8ab4",
+            "role": "researcher",
+            "description": "Researcher",
+            "person": {
+                "id": "d1003781-06eb-494c-b398-7155471e8ab4",
+                "first_name": "Joe",
+                "last_name": "Morrow",
+                "address": "15 E. Lewis St., Norman, OK, 73019-3072",
+                "PID": "ORCAIDxxxxx",
+                "organizations": [
+                    {
+                        "id": "8b604533-ba27-4361-8662-8b70606bf494",
+                        "name": "University of Oklahoma",
+                        "description": "Educational Institution",
+                        "PID": "https://ror.org/02aqsxs83"
+                    }
+                ]
+            }
+        },
+        {
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "person_id": "d1003781-06eb-494c-b398-7155471e8ab4",
+            "role": "data_submitter",
+            "description": "Data Submitter",
+            "person": {
+                "id": "d1003781-06eb-494c-b398-7155471e8ab4",
+                "first_name": "Joe",
+                "last_name": "Morrow",
+                "address": "15 E. Lewis St., Norman, OK, 73019-3072",
+                "PID": "ORCAIDxxxxx",
+                "organizations": [
+                    {
+                        "id": "8b604533-ba27-4361-8662-8b70606bf494",
+                        "name": "University of Oklahoma",
+                        "description": "Educational Institution",
+                        "PID": "https://ror.org/02aqsxs83"
+                    }
+                ]
+            }
+        },
+        {
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "person_id": "22076fe2-f2b4-4d63-b9f2-ee3eae246398",
+            "role": "researcher",
+            "description": "Researcher",
+            "person": {
+                "id": "22076fe2-f2b4-4d63-b9f2-ee3eae246398",
+                "first_name": "Jane",
+                "last_name": "Brown",
+                "address": "12 E. Hall of Fame St., Stillwater, OK, 74075",
+                "PID": "ORCAIDyyyyy",
+                "organizations": [
+                    {
+                        "id": "0697e206-0618-466f-a608-63c1bd0fb9ef",
+                        "name": "Oklahoma State University",
+                        "description": "Educational Institution",
+                        "PID": "https://ror.org/01g9vbr38"
+                    }
+                ]
+            }
+        },
+        {
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "person_id": "2684f1fc-da8b-4ad9-823d-614b16f2740c",
+            "role": "worker",
+            "description": "Lab Worker",
+            "person": {
+                "id": "2684f1fc-da8b-4ad9-823d-614b16f2740c",
+                "first_name": "Julie",
+                "last_name": "Jefferies",
+                "address": "75 E. Monroe St., Stillwater, OK, 74075",
+                "PID": "ORCAIDzzzzz",
+                "organizations": [
+                    {
+                        "id": "0697e206-0618-466f-a608-63c1bd0fb9ef",
+                        "name": "Oklahoma State University",
+                        "description": "Educational Institution",
+                        "PID": "https://ror.org/01g9vbr38"
+                    }
+                ]
+            }
+        }
+    ],
+    "organizations": [
+        {
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "organization_id": "8b604533-ba27-4361-8662-8b70606bf494",
+            "role": "responsible_party",
+            "description": "Responsible Organization",
+            "organization": {
+                "id": "8b604533-ba27-4361-8662-8b70606bf494",
+                "name": "University of Oklahoma",
+                "description": "Educational Institution",
+                "PID": "https://ror.org/02aqsxs83",
+                "people": [
+                    {
+                        "id": "d1003781-06eb-494c-b398-7155471e8ab4",
+                        "first_name": "Joe",
+                        "last_name": "Morrow",
+                        "address": "15 E. Lewis St., Norman, OK, 73019-3072",
+                        "PID": "ORCAIDxxxxx"
+                    }
+                ]
+            }
+        },
+        {
+            "metadata_document_id": "329580cd-4439-4e12-9657-f2b60cb09650",
+            "organization_id": "0697e206-0618-466f-a608-63c1bd0fb9ef",
+            "role": "researcher",
+            "description": "Some Researchers work Here",
+            "organization": {
+                "id": "0697e206-0618-466f-a608-63c1bd0fb9ef",
+                "name": "Oklahoma State University",
+                "description": "Educational Institution",
+                "PID": "https://ror.org/01g9vbr38",
+                "people": [
+                    {
+                        "id": "22076fe2-f2b4-4d63-b9f2-ee3eae246398",
+                        "first_name": "Jane",
+                        "last_name": "Brown",
+                        "address": "12 E. Hall of Fame St., Stillwater, OK, 74075",
+                        "PID": "ORCAIDyyyyy"
+                    },
+                    {
+                        "id": "2684f1fc-da8b-4ad9-823d-614b16f2740c",
+                        "first_name": "Julie",
+                        "last_name": "Jefferies",
+                        "address": "75 E. Monroe St., Stillwater, OK, 74075",
+                        "PID": "ORCAIDzzzzz"
+                    }
+                ]
+            }
+        }
+    ]
+}
